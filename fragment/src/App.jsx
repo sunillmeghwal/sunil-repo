@@ -5,6 +5,8 @@ import ErrorMessage from "./component/ErrorMessage";
 
 function App() {
   // let foodItems = [];
+
+ 
   let foodItems = [
     "Dal",
     "Green Vegetable",
@@ -13,14 +15,14 @@ function App() {
     "Ghee",
     "salad",
     "Curd",
-    "Sbji"
+    "Sbji",
   ];
 
   return (
     <>
-      <h1> Healthy Foods </h1>
+      <h1 className="food-heading"> Healthy Foods </h1>
       <ErrorMessage items={foodItems} />
-       <FoodItems  items={foodItems}/>
+      <FoodItems items={foodItems} />
     </>
   );
 }

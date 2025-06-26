@@ -1,7 +1,7 @@
 const Item = ({ foodItems }) => {
   return (
     <>
-      <li className="list-group-item">{foodItems}</li>
+      <li className="list-group-item show-items"><span className="my-span">{foodItems}</span></li>
     </>
   );
 };
