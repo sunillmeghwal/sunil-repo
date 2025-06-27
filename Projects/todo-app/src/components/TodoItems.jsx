@@ -1,22 +1,15 @@
-function TodoItems(){
-  let todoname='Buy Milk';
-  let tododate='4/10/2023';
-  return(
-    <>
-    <div class="container">
-          <div class="row my-row">
-            <div class="col-6">{todoname}</div>
-            <div class="col-4">{tododate}</div>
-            <div class="col-2">
-              <button type="button" class="btn btn-danger my-button">
-                Delete
-              </button>
-            </div>
-          </div>
-        </div>
-        
+import TodoItem from "./TodoItem";
+import styles from "./TodoItems.module.css";
 
+const TodoItems = ({ todoItems }) => {
+  return (
+    <>
+      <div className={styles.itemsContainer}>
+        {todoItems.map((item) => (
+          <TodoItem todoName={item.name} todoDate={item.dueDate} />
+        ))}
+      </div>
     </>
-  )
-}
+  );
+};
 export default TodoItems;
