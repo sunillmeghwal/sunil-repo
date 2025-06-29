@@ -31,13 +31,35 @@ function App() {
   // const [todoItems, setTodoItems] = useState(initialTodoItems);
   const [todoItems, setTodoItems] = useState([]);
 
+  // const handleNewItem = (itemName, itemDueDate) => {
+  //   // console.log(`New Item Added:${itemName} Date:${itemDueDate}`);
+  //   const newTodoItems = [
+  //     ...todoItems,
+  //     { name: itemName, dueDate: itemDueDate },
+  //   ];
+  //   setTodoItems(newTodoItems);
+  // };
+
   const handleNewItem = (itemName, itemDueDate) => {
     // console.log(`New Item Added:${itemName} Date:${itemDueDate}`);
-    const newTodoItems = [
-      ...todoItems,
+
+    //   setTodoItems((currentValue) => {
+    //     const newTodoItems = [
+    //       ...todoItems,
+    //       { name: itemName, dueDate: itemDueDate },
+    //     ];
+    //     return newTodoItems;
+    //   });
+    // };
+
+
+
+    //OR//
+
+    setTodoItems((currentValue) => [
+      ...currentValue,
       { name: itemName, dueDate: itemDueDate },
-    ];
-    setTodoItems(newTodoItems);
+    ]);
   };
 
   const handleDeleteItem = (todoItemName) => {
