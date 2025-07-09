@@ -7,7 +7,7 @@ import { evaluate } from "mathjs"; // ✅ import mathjs
 function App() {
   const [calValue, setCalValue] = useState("");
   const onButtonClick = (buttonText) => {
-    if (buttonText === "C") {
+    if (buttonText === "Clear") {
       setCalValue("");
     } else if (buttonText === "=") {
       //     const result = eval(calValue);
