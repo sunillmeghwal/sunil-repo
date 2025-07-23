@@ -1,22 +1,50 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
+import { PostList } from "../store/post-list-store";
 
 function CreatePost() {
+ const {addPost}= useContext(PostList);
 
-  const userId= useRef();
-    const postTitle= useRef();
-      const postBody= useRef();
-        const reactions= useRef();
-          const tags= useRef();
+
+  const userIdElement= useRef();
+    const postTitleElement= useRef();
+      const postBodyElement= useRef();
+        const reactionsElement= useRef();
+          const tagsElement= useRef();
+
+          const handleSubmit=(event)=>{
+            event.preventDefault();
+            const userId=userIdElement.current.value;
+            const postTitle=postTitleElement.current.value;
+            const postBody=postBodyElement.current.value;
+            const reactions=reactionsElement.current.value;
+            const tags=tagsElement.current.value.split(" ");
+
+userIdElement.current.value="";
+postTitleElement.current.value="";
+postBodyElement.current.value="";
+reactionsElement.current.value="";
+tagsElement.current.value="";
+
+
+
+
+
+
+
+            addPost(userId,postTitle,postBody,reactions,tags);
+
+          }
 
   return (
     <div>
-      <form className="create-post">
+      <form className="create-post" onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="userId" className="form-label">
             Enter your UserId here
           </label>
           <input
             type="text"
+            ref={userIdElement}
             className="form-control"
             id="userId"
             placeholder="Your User Id"
@@ -29,6 +57,7 @@ function CreatePost() {
           </label>
           <input
             type="text"
+            ref={postTitleElement}
             className="form-control"
             id="title"
             placeholder="How are you felling today..."
@@ -41,6 +70,7 @@ function CreatePost() {
           </label>
           <textarea
             type="text"
+            ref={postBodyElement}
             rows="4"
             className="form-control"
             id="body"
@@ -54,6 +84,7 @@ function CreatePost() {
           </label>
           <input
             type="text"
+            ref={reactionsElement}
             className="form-control"
             id="title"
             placeholder="How many people reacted to this post"
@@ -66,6 +97,7 @@ function CreatePost() {
           </label>
           <input
             type="tags"
+            ref={tagsElement}
             className="form-control"
             id="title"
             placeholder="please enter tags using space"
