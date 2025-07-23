@@ -33,7 +33,7 @@ function Footer() {
               </a>
             </li>{" "}
           </ul>{" "}
-          <p className="text-center text-body-secondary">© 2025 Company, Inc</p>{" "}
+          <p className="text-center text-body-secondary">© 2025 Sunil_Hatila, Inc</p>{" "}
         </footer>{" "}
       </div>
     </>
