@@ -12,7 +12,7 @@ const  Post=({post}) =>{
       <div className="card post-card" style={{ width: "30rem" }}>
         <div className="card-body">
           <h5 className="card-title">{post.title}
-             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" onClick={()=>deletePost(post.id)}>
+             <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" onClick={()=>deletePost(post.id)}>
              
  <AiFillDelete />
    
@@ -24,11 +24,11 @@ const  Post=({post}) =>{
 
           {post.tags.map((tag)=>(
 
-          <span key={tag} class="badge text-bg-primary hashtag">{tag}</span>
+          <span key={tag} className="badge text-bg-primary hashtag">{tag}</span>
           ))}
 
           <div className="alert alert-success reactions" role="alert">
-  This post has been reacted by {post.reactions} people.
+  This post has been reacted by {post.reaction} people.
 </div>
         </div>
       </div>
